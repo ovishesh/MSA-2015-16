@@ -1,6 +1,5 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     var controller = document.body.getAttribute("data-controller");
-
     if (controller === "students") {
         loadStudentsTable(controller);
     }
@@ -40,6 +39,10 @@ function loadStudentsTable(controller) {
             var editbtn = document.createElement('button');
             editbtn.className = "btn btn-default";
             editbtn.innerHTML = "Edit";
+                                    
+            // You can set your own attributes to elements. This is pretty handy
+            // for idenitfying them without using the id tag, or keeping context
+            // between different pages (see the 'detail' page event handler down)
             editbtn.setAttribute("data-id", students[i].ID);
             editbtn.setAttribute("data-btntype", "edit");
 
@@ -61,16 +64,20 @@ function loadStudentsTable(controller) {
         }
 
         // Show table after it's all loaded
+        // The "hidden" class is part of bootstrap
         document.getElementById("tblstudent").classList.remove("hidden");
         document.getElementById("loadingmsg").style.display = "none";
 
-        // Event delegation, explain this well
+        // Event delegation
         studentsTable.addEventListener('click', function (e) {
             var target = e.target;
 
             // Bubble up to tbody - need to bubble the event up because the click occurs in 
             // the td cells but the data-id attribute is in the row (for going to more detail page)
             while (target.nodeName.toLowerCase() !== "tbody") {
+                
+                // For all these cases we use the data-id stored in either the cell or the row to keep context
+                // between seperate pages
                 
                 // Edit
                 if (target.getAttribute("data-btntype") === "edit") {
@@ -84,7 +91,7 @@ function loadStudentsTable(controller) {
                     });
                     return;
                 
-                // Detail
+                // Detail - this is true if clicked anywhere within the row
                 } else if (target.nodeName.toLowerCase() === "tr") {
                     window.location.href = 'detail.html' + '?type=' + controller + '&id=' + target.getAttribute("data-id");
                     return;

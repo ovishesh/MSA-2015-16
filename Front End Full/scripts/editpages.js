@@ -4,7 +4,7 @@
 
     if (controller === "courses") {
 
-        // TODO:load course form and submit
+        // Not using this (for now)
 
     } else if (controller === "students") {
         
@@ -48,9 +48,7 @@ function loadForm(obj) {
 
     // Prefill form with details
     for (var key in obj) {
-
         if (key.toLowerCase() !== "id") {
-            
             var forminput = document.getElementById(key + 'input');
             forminput.value = obj[key];
         }
@@ -63,7 +61,6 @@ function loadForm(obj) {
 function setupStudentSubmit(id) {
 
     //Creating student from form and update db
-
     var form = document.forms.edit;
     form.onsubmit = function (e) {
         e.preventDefault();
@@ -78,13 +75,10 @@ function setupStudentSubmit(id) {
             window.location.href = "index.html";
         });
     }
-
 };
 
-function setupReturn() {
-
-    //Go back to home without saving changes
-    
+//Go back to home without saving changes
+function setupReturn() {    
     document.getElementById('btncancel').addEventListener('click', function () {
          window.location.href = "index.html";
     });

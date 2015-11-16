@@ -3,7 +3,7 @@
     var id = getUrlParameters("id", "", true);
 
     if (controller === "courses") {
-        // TODO: Get course details
+        // Unused (for now)
     } else if (controller === "students") {
         StudentModule.getStudentById(id, function (student) {
             document.getElementById("loadingmsg").style.display = "none";
@@ -14,7 +14,6 @@
 });
 
 function showDetails(obj) {
-
     // Load details
     for (var key in obj) {
         if (key.toLowerCase() !== "id") {
