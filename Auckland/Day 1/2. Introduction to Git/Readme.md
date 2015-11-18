@@ -13,24 +13,23 @@ Alternatively, you can install the Desktop app - https://desktop.github.com/
 # 2. Create a Repository 
 - On the Github website, click on the 'add' icon and create 'new repository'
 
-
-
+![2a](/_images/2a.png)
 
  - Give your repository a name (such as project name)
 
  - If you have activated the student pack, you can create a 'private' repo.
 
-
+![2b](/_images/2b.png)
 
 # 3. Clone Repository
 
  - Once you have installed the GitHub extension for VS, you'll see the GitHub as a provider under the 'Team Explorer' tab. Login by clicking 'Connect'.
 
-
+![3a](/_images/3a.png)
 
  - Click 'Clone' to create a local copy of the repository
 
-
+![3b](/_images/3b.png)
 
 # 4. Creating a project in repo
 
@@ -40,13 +39,13 @@ Alternatively, you can install the Desktop app - https://desktop.github.com/
 
  - To commit your changes to the local repository, click on 'changes'
 
-
+![5a](/_images/5a.png)
 
 - Add a message, check the files you want committed and click the 'Commit' button.
 
 - If you are ready to sync (push your changes to the global repository), click 'Sync'
 
-
+![5b](/_images/5b.png)
 
 
 # 6. Branching
@@ -63,5 +62,3 @@ GitHub Help - https://training.github.com/kit/courses/github-for-everyone.html
 To learn the basics of Git in command line try this - https://try.github.io/
 
 FAQ for GitHub Extension for VS - https://visualstudio.github.com/help.html
-
-
