@@ -31,9 +31,10 @@
  - Change HTML content/attributes
  - Change HTL styles 
  - Validate data
- - <script>  … 
+  ```html
+ <script> 
+ ```
  - Functions - execute when asked 
  - Events - execute when an event occurs
-
-
+ 
 http://www.w3schools.com/
