@@ -27,54 +27,130 @@ Essentially, we will have a module that's dedicated to making calls to the API s
 ![3](/Others/_images/Web II/3.PNG)
 
 ## 4. Hands-on Exercise
-	
-	1. Download the initial code which has the HTML and CSS with Bootstrap - https://github.com/ovishesh/MSA-2015-16/tree/master/Others/Front%20End%20Demo
-	
-	To open this in Visual Studio, go File -> Open -> Web Site -> [Select the folder with the initial source code]
-	
+
+1- Download the initial code which has the HTML and CSS with Bootstrap - https://github.com/ovishesh/MSA-2015-16/tree/master/Others/Front%20End%20Demo
+
+To open this in Visual Studio, go File -> Open -> Web Site -> Select the folder with the initial source code
+
 ![4-1](/Others/_images/Web II/4-1.PNG)
-	
-	
-	2. Create (if not already created) a new JavaScript file called index.js to the project and reference it in the header of index.html as shown below.
-	
-![4-2a](/Others/_images/Web II/4-2a.PNG)
-	
-	In the newly created index.js, add the following  
-	
-![4-2b](/Others/_images/Web II/4-2b.PNG)
-	
-	Anything within this block of code will be executed when the page is loaded.
-	
-	
-	3. Create another JavaScript file called StudentModule.js. Reference this in the header of index.html like step 2.
-	
-	In StudentModule.js, add the following
-	
-![4-3a](/Others/_images/Web II/4-3a.PNG)
-	
-	This is the module pattern talked about (3)
-	
-	We now want to call the 'getStudents' function. In index.js, add a helper method named 'loadStudent()' and call it from the Event Listener. The js file should look like this
-	
-![4-3b](/Others/_images/Web II/4-3b.PNG)
-	
-	
-	4. Once 'getStudent' is called, we want to make a GET request to get the data. In StudentModule.js, add the following
-	The GET type means we are requesting data from a source/server
-	The data type means we are expecting JSON encoded data back (if you want to read about why its 
-	
-![4-4](/Others/_images/Web II/4-4.PNG)
-	
-	5. We now want to display the data in a table. In change loadStudents() in index.js so it looks like this
-	
-![4-5](/Others/_images/Web II/4-5.PNG)
-	
-	6.  Let's display the data. Further add on to loadStudents() so it looks like this.
-	For each person we need to add a row to the table (tr elements). Within each row
-	we need to add td elements - these are like columns for each property
-	
-![4-6](/Others/_images/Web II/4-6.PNG)
+
+2- Create (if not already created) a new JavaScript file called index.js to the project and reference it in the header of index.html as shown below.
+
+	<script src="scripts/index.js"></script>
+
+In the newly created index.js, add the following  
+
+	// This event triggers on page load
+	document.addEventListener("DOMContentLoaded", function () {
+	});
+
+Anything within this block of code will be executed when the page is loaded.
 
 
+3- Create another JavaScript file called StudentModule.js. Reference this in the header of index.html like step 2.
+
+	<script src="scripts/StudentModule.js"></script> 
+
+In StudentModule.js, add the following
+
+	var StudentModule = (function () {
+		// Return anything that you want to expose outside the closure
+		return {
+			getStudents: function (callback) {  
+	
+			}
+		};
+	}());
+
+This is the module pattern talked about (3)
+
+We now want to call the 'getStudents' function. In index.js, add a helper method named 'loadStudent()' and call it from the Event Listener. The js file should look like this
+
+	document.addEventListener("DOMContentLoaded", function () {
+		loadStudents();
+	});
+	
+	function loadStudents(){
+		StudentModule.getStudents();
+	}
+
+4- Once 'getStudent' is called, we want to make a GET request to get the data. In StudentModule.js, add the following
+The GET type means we are requesting data from a source/server
+The data type means we are expecting JSON encoded data back (if you want to read about why its 
+
+	// Return anything that you want to expose outside the closure
+	return {
+		getStudents: function (callback) {
+	
+			$.ajax({ 
+				type: "GET",
+				dataType: "jsonp",
+				url: "http://api.uinames.com/?amount=25",
+				success: function(data){        
+					console.log(data);
+					callback(data);
+				}
+			});
+			
+		}
+	};
+
+5- We now want to display the data in a table. In change loadStudents() in index.js so it looks like this
+
+	function loadStudents(){
+		
+		// We need a reference to the div/table that we are going to chuck our data into
+		var studentsTable = document.getElementById("tblstudentcontent");
+	
+		StudentModule.getStudents(function (studentsList) {
+			setupStudentsTable(studentsList);
+		});
+		
+		// This is the callback for when the data comes back in the studentmodule
+		function setupStudentsTable(students) {
+	
+		}
+	}
+
+6-  Let's display the data. Further add on to loadStudents() so it looks like this.
+For each person we need to add a row to the table (tr elements). Within each row
+we need to add td elements - these are like columns for each property
+
+	function loadStudents(){
+		
+		// We need a reference to the div/table that we are going to chuck our data into
+		var studentsTable = document.getElementById("tblstudentcontent");
+	
+		StudentModule.getStudents(function (studentsList) {
+			setupStudentsTable(studentsList);
+		});
+		
+		// This is the callback for when the data comes back in the studentmodule
+		function setupStudentsTable(students) {
+			console.log(students);
+			for (i = 0; i < students.length; i++) {
+				
+				// Create row 
+				var row = document.createElement('tr');
+	
+				// Add the columns in the row (td / data cells)
+				var lastnamecol = document.createElement('td');
+				lastnamecol.innerHTML = students[i].surname;
+				row.appendChild(lastnamecol);
+	
+				var firstnamecol = document.createElement('td');
+				firstnamecol.innerHTML = students[i].name;
+				row.appendChild(firstnamecol);
+	
+				var enrollmentdatecol = document.createElement('td');
+				enrollmentdatecol.innerHTML = students[i].country;
+				row.appendChild(enrollmentdatecol);
+				
+				// Append the row to the end of the table
+				studentsTable.appendChild(row);
+	
+			}
+		}
+	}
 
 
