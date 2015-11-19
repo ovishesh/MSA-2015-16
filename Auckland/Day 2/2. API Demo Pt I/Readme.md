@@ -9,16 +9,16 @@ API Sessions folder.
 Create a new project and navigate to Templates -> Visual C# -> Web. Select ASP.NET Web Application and give your project 
 a meaningful name. 
 
-![1-1](/Others/_images/API I/)
+![1-1](/Others/_images/API I/1-1.png)
 
 Select the Empty project. Make sure only "WebAPI" is selected.
 
-![1-2](/Others/_images/API I/)
+![1-2](/Others/_images/API I/1-2.png)
 
 If you did the above correctly, you should get an empty project with the controller and model folders. This is where you 
 will put you controllers and models.
 
-![1-3](/Others/_images/API I/)]
+![1-3](/Others/_images/API I/1-3.png)]
 
 ## 2. Creating the Model Classes
 
@@ -34,7 +34,7 @@ of enrollments to different courses, but we'll get to that later.
 To do this, Right click the Models folder, then select Add -> New Item then find the template "Class". Name this class 
 "Student".
 
-![2-1](/Others/_images/API I/)]
+![2-1](/Others/_images/API I/2-1.png)]
 
 Replace the class definition in Student.cs with
 
@@ -112,13 +112,13 @@ CRUD methods. This process is called scaffolding.
 To scaffold your controllers, right click on your "Controller" folder and click Add -> Controller. Select "Web API 2 
 Controller with actions, using Entity Framework". Click Add.
 
-![3-1](/Others/_images/API I/)
+![3-1](/Others/_images/API I/3-1.png)
 
 In the Add Controller dialog, select the model you want (Student to start with) and create a new Data context class 
 by clicking the "+" button. You can accept the default name. Press Add. If you get an error about not having built 
 your project, just go ahead and build your project.
 
-![3-2](/Others/_images/API I/)
+![3-2](/Others/_images/API I/3-2.png)
 
 Now, add controllers for Enrollments and Courses the same way you added the controller for the students (right click on 
 your Controllers folder > Add > Controller… etc.
@@ -298,16 +298,16 @@ different CRUD operations (POST, GET, etc). To read more about this, see https:/
 To setup Swagger, simply right click your project, click “Manage NuGet Packages…”, and search for “Swashbuckle”. 
 Install this and you’re done! 
 
-![5-1](/Others/_images/API I/)
+![5-1](/Others/_images/API I/5-1.png)
 
 To use swagger, simply build and run your project locally. When your browser opens up, you’ll probably get some sort of 
 error that resembles this. HTTP Error 403.14 - Forbidden. That’s okay! To access swagger, all you have to do is append 
 the URL with /swagger. E.g. http://localhost:51731/swagger. 
 
-![5-2](/Others/_images/API I/)
+![5-2](/Others/_images/API I/5-2.png)
 
 Here you can test the different CRUD operations from within your browser. For example, expand the “Students” row and select 
 “GET”. Click “Try it out!” to execute the GET request. Give it about a minute and it should return to you a list of 
 students in JSON format, if everything goes well. 
 
-![5-3](/Others/_images/API I/)
+![5-3](/Others/_images/API I/5-3.png)
