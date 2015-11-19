@@ -28,15 +28,13 @@ Essentially, we will have a module that's dedicated to making calls to the API s
 
 ## 4. Hands-on Exercise
 
-1- Download the initial code which has the HTML and CSS with Bootstrap - https://github.com/ovishesh/MSA-2015-16/tree/master/Others/Front%20End%20Demo
+1a - Create a new Empty ASP.NET Web Application Project, and check the option for Web API 
+1b - Alternatively Download the initial project which has the HTML and CSS with Bootstrap - https://github.com/ovishesh/MSA-2015-16/tree/master/Auckland/Day%201/3.%20Web%20Sessions/Web%20II/MSAWebApp
 
-To open this in Visual Studio, go File -> Open -> Web Site -> Select the folder with the initial source code
-
-![4-1](/Others/_images/Web II/4-1.PNG)
 
 2- Create (if not already created) a new JavaScript file called index.js to the project and reference it in the header of index.html as shown below.
 
-	<script src="scripts/index.js"></script>
+	<script src="Scripts/index.js"></script>
 
 In the newly created index.js, add the following  
 
@@ -49,7 +47,7 @@ Anything within this block of code will be executed when the page is loaded.
 
 3- Create another JavaScript file called StudentModule.js. Reference this in the header of index.html like step 2.
 
-	<script src="scripts/StudentModule.js"></script> 
+	<script src="Scripts/StudentModule.js"></script> 
 
 In StudentModule.js, add the following
 
