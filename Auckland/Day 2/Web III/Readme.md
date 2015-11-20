@@ -18,12 +18,12 @@ There are a few changes we need to make to make your API work with the frontend 
 
 1. In your ajax call in StudentModule.js, change the dataType of your ajax call from **jsonp** to **json**
 2. In the same ajax call change the url being called to the url of *your* api
-Example:
+
 ```javascript
   $.ajax({
       type: "GET",
       dataType: "json",
-      url: "http://msauniversity.azurewebsites.net/api/Students",
+      url: "http://[my-webapp-name-here].azurewebsites.net/api/Students",
       success: function (data) {
           callback(data);
       }
@@ -45,12 +45,13 @@ Example:
     row.appendChild(enrollmentdatecol);
 ```
 
-4.) Change your**th** tags in **index.html** to match the new properties
+4.) Change your **th** tags in **index.html** to match the new properties
 ```HTML
   <thead>
       <tr>
           <th>Last Name</th>
           <th>First Name</th>
+          <th>Enrollment Date</th>
       </tr>       
   </thead>
 ````
