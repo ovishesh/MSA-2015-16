@@ -1,0 +1,14 @@
+﻿body {
+}
+
+/*select all the th elements inside t
+    the table head and spaces them out!*/
+.spaced-table>tbody>tr>td{
+    padding: 20px;
+}
+
+/*select all the th elements inside the 
+    table body and spaces them out!*/
+.spaced-table>thead>tr>th{
+    padding: 40px;
+}
