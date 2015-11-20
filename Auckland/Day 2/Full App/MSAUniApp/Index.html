@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/style.css"/>
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/indexpages.js"></script>
+    <script src="scripts/studentmodule.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">MSA demo</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Students</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <a href="Create.html">+ Create a student</a>
+        <div class="table-responsive">
+            <table class="table table-striped spaced-table table-hover hidden" id="tblstudent">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Enrollment Date</th>
+                        <th></th>
+                        <th></th>
+                    </tr>       
+                </thead>
+                <tbody id="tblstudentcontent">
+                </tbody>
+            </table>
+            <p id="loadingmsg">Students table loading...</p>
+        </div>
+    </div>
+</body>
+</html>
