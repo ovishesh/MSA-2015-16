@@ -57,7 +57,9 @@ Alternatively, you can install the Desktop app - https://desktop.github.com/
 
 # Help / Learn More
 
-GitHub Help - https://training.github.com/kit/courses/github-for-everyone.html
+GitHub Help - https://help.github.com/
+
+GitHub Training - https://training.github.com/kit/courses/github-for-everyone.html
 
 To learn the basics of Git in command line try this - https://try.github.io/
 
