@@ -16,8 +16,8 @@ var StudentModule = (function () {
            // The callback allows us to pass this data back out main js file.
             $.ajax({
                 type: "GET",
-                dataType: "jsonp",
-                url: "http://api.uinames.com/?amount=25",
+                dataType: "json",
+                url: "https://[YOUR-AZURE-WEBSITE].azurewebsites.net/api/Students",
                 success: function (data) {
                     callback(data);
                 }

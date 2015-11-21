@@ -25,15 +25,15 @@ function setupStudentsTable(studentsList) {
 
         //Create our data cells and append to row
         var firstNameCol = document.createElement("td");
-        firstNameCol.innerHTML = studentsList[i].name;
+        firstNameCol.innerHTML = studentsList[i].FirstMidName;
         row.appendChild(firstNameCol);
 
         var lastNameCol = document.createElement("td");
-        lastNameCol.innerHTML = studentsList[i].surname;
+        lastNameCol.innerHTML = studentsList[i].LastName;
         row.appendChild(lastNameCol);
 
         var country = document.createElement("td");
-        country.innerHTML = studentsList[i].country;
+        country.innerHTML = studentsList[i].EnrollmentDate;
         row.appendChild(country);
 
         // Append our rows to the table 
