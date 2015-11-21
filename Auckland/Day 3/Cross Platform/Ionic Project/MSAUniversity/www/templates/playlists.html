@@ -1,0 +1,9 @@
+<ion-view view-title="Students">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="student in students" href="#/app/playlists/{{student}}">
+        {{student.FirstMidName}} {{student.LastName}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
