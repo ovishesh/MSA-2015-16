@@ -1,0 +1,41 @@
+﻿body {
+  /*padding-top: 60px;*/
+}
+/*@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}*/
+
+.spaced-table>thead>tr>th{
+    padding:20px 20px;
+}
+
+.spaced-table>tbody>tr>td{
+    padding: 40px 20px;
+    vertical-align:middle;  /*when you add button it gets weird so need this*/
+}
+
+.spaced-table>tbody>tr{
+   cursor:pointer;
+}
+
+#loadingscreen{
+    height:100vh;
+    background-color:#5c2d91;
+    /*display:none;*/
+    text-align:center;
+    position:absolute;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#loadinganim{
+  color:#fff;
+  font-size:larger;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
