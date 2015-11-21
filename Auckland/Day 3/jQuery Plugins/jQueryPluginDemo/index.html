@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Plugin Demo</title>
+    <meta charset="utf-8" />
+    <!-- Include the fakeLoader.css -->
+    <link rel="stylesheet" type="text/css" href="css/fakeLoader.css">
+    <!-- Include the sweetalert.css -->
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+</head>
+<body>
+    <div id="fakeLoader"></div>
+    <button id="sweetalert">Log out</button>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include the fakeLoader.js -->
+    <script src="js/fakeLoader.min.js"></script>
+    <!-- Include the sweetalert -->
+    <script src="js/sweetalert.min.js"></script>
+    <!-- Using fakeLoader -->
+    <script type="text/javascript">
+        $("#fakeLoader").fakeLoader({
+            // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
+            timeToHide: 1000,        // Animation lasts 1000 ms
+            zIndex: 999,            // Make sure that the loader is always on top of any other elements
+            spinner: "spinner2",    // Change spinner animation
+            bgColor: "#5c2d91"        // Custom background colour
+        });
+    </script>
+    <!-- Using sweetalert -->
+    <script>
+        $("#sweetalert").click(function () {
+            swal({
+                title: "Log out Confirmation",
+                text: "Are you sure you want to log out without saving your work?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#5c2d91",
+                confirmButtonText: "Yes",
+                closeOnConfirm: false
+            },
+				function () {
+				    swal("Success",
+						"You have successfully logged out.",
+						"success");
+				});
+        });
+    </script>
+</body>
+</html>
