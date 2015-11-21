@@ -11,9 +11,6 @@ namespace MSAUniApp
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            
-            // The below 2 lines states that any origin can access our API
-            // For more info: 
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 

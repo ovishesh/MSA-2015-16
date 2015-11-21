@@ -137,12 +137,8 @@ namespace MSAUniApp.Models
 
         public MSAUniAppContext() : base("name=MSAUniAppContext")
         {
-            if (!Database.Exists("MSAUniAppContext"))
-            {
-                // Need to initialize database with configuration 
-                Database.SetInitializer(new MigrateDatabaseToLatestVersion<MSAUniAppContext, MyConfiguration>());
-            }
-            }
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MSAUniAppContext, MyConfiguration>());
+        }
 
         public System.Data.Entity.DbSet<MSAUniApp.Models.Student> Students { get; set; }
 
