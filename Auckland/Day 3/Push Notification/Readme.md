@@ -40,3 +40,40 @@ This guarantees that the channel URI is registered in your notification hub each
 ## 2. Enabling toast
 
 In Solution Explorer, double-click Package.appxmanifest of the Windows Store app, and then in Notifications, set Toast capable to Yes.
+
+#Sending Push Notification from console app
+
+## 1. Creating console app
+
+Right-click the solution, select Add and New Project..., and then under Visual C#, click Windows and Console Application, and click OK.
+
+## 2. Adding required NuGet
+
+In Visual Studio, click Tools, click NuGet Package Manager, and then click Package Manager Console. This displays the Package Manager Console in Visual Studio.
+In the Package Manager Console window, set the Default project to your new console application project, and then in the console window, execute the following command:
+
+	Install-Package Microsoft.Azure.NotificationHubs
+	
+Open the Program.cs file and add the following using statement:
+	
+	using Microsoft.Azure.NotificationHubs;
+	
+In the Program class, add the following method:
+
+	private static async void SendNotificationAsync()
+	{
+		NotificationHubClient hub = NotificationHubClient
+			.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
+		var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">Hello from a .NET App!</text></binding></visual></toast>";
+		await hub.SendWindowsNativeNotificationAsync(toast);
+	}
+	
+Make sure to replace the "hub name" placeholder with the name of the notification hub that appears in the portal on the Notification Hubs tab. 
+Also, replace the connection string placeholder with the connection string called DefaultFullSharedAccessSignature that you obtained in the section "Configure your notification hub."
+
+Add the following lines in the Main method:
+
+	SendNotificationAsync();
+	Console.ReadLine();
+	
+Right-click the console application project in Visual Studio, and click Set as StartUp Project to set it as the startup project. Then press the F5 key to run the application.
