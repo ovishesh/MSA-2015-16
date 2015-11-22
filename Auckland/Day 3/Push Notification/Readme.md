@@ -1,3 +1,48 @@
+# Register your app for the Windows Store
+
+To send push notifications to Windows Store apps, you must associate your app to the Windows Store. You must then configure your notification hub to integrate with WNS.
+
+1. If you have not already registered your app, navigate to http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409, sign in with your Microsoft account, and then click Create a new app.
+
+2. Type a name for your app and click Reserve app name.
+
+This creates a new Windows Store registration for your app.
+
+3. In Visual Studio, create a new Visual C# Store Apps project by using the Blank App template.
+
+4. In Solution Explorer, right-click the Windows Store app project, click Store, and then click Associate App with the Store....
+
+The Associate Your App with the Windows Store wizard appears.
+
+5. In the wizard, click Sign in and then sign in with your Microsoft account.
+
+6. Click the app that you registered in step 2, click Next, and then click Associate.
+
+This adds the required Windows Store registration information to the application manifest.
+
+7. Back on the Windows Dev Center page for your new app, click Services, click Push notifications, and then click Live Services site under Windows Push Notification Services (WNS) and Microsoft Azure Mobile Services.
+
+8. On the App Settings tab, make a note of the values of Client secret and Package security identifier (SID).
+
+#Configure your notification hub
+
+1. Log on to the Azure Management Portal, and then click +NEW at the bottom of the screen.
+
+2. Click on App Services, then Service Bus, then Notification Hub, then Quick Create.
+
+3. Enter a Notification Hub Name. Select your desired region and subscription.
+
+If you already have a service bus namespace that you want create the hub in, select your Namespace Name. Otherwise, you can use the default Namespace Name which will be created based on the hub name as long as the namespace name is available.
+Click Create a new Notification Hub.
+
+4. Once the namespace and notification hub are created, your namespaces in service bus will be displayed. Click the namespace that you just created your hub in (usually notification hub name-ns).
+
+5. On your namespace page, click the Notification Hubs tab at the top, and then click on the notification hub you just created. This will open the dashboard for your new notification hub.
+
+6. On the dashboard for your new hub click View Connection String. Take note of the two connection strings. You will use these later.
+
+7. Select the Configure tab at the top, enter the Client secret and Package SID values that you obtained from WNS in the previous section, and then click Save.
+
 #Push Notification
 
 In this tutorial, we will expanding on your Windows 10 apps and enabling push notification. 
