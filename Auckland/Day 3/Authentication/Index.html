@@ -8,15 +8,15 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/StudentModule.js"></script>
     <script src="Scripts/index.js"></script>
-    
+    <script src="Scripts/facebooklogin.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
 
 </head>
 <body>
 
-    <!-- If you want to authenticate later uncomment this line.
-         <a href="https://[YOUR-WEBSITE-NAME].azurewebsites.net/.auth/login/facebook/callback">Login</a> -->
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+	<div id="status"></div>
     
     <div class="table-responsive"> <!-- just makes it a bit nicer on mobile devices -->
         <table class="table table-striped spaced-table"> <!-- apply some boostrap classes to our table -->
