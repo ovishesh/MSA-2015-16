@@ -128,14 +128,18 @@ Please make sure you enter your App's ID in the field above where is says 'REPLA
 
 13. Now to log users in add the following code somewhere in the bottom of your html page:
 
+```
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-	
+```
+
 'scope' is used to ask the user permission to assess more information. By default the when the user logs in you are given permission to view the user's public profile and that's it.
 Beyond that, the user can reject any additional permissions. 
 	
 14. Add this next line to display to the user they're currently logged in:
 
+```
 	<div id="status"></div>
+```	
 	
 The above line is used to display a message to the user informing them they're currently logged in.
 
