@@ -36,6 +36,7 @@ There are a few changes we need to make to make your API work with the frontend 
 
 11. Next replace any code that might have been generated with the following code:
 
+```
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -119,6 +120,7 @@ There are a few changes we need to make to make your API work with the frontend 
 				'Thanks for logging in, ' + response.name + '!';
 		});
 	}
+```
 	
 Please make sure you enter your App's ID in the field above where is says 'REPLACE-WITH-YOUR-FACEBOOK'S APP ID'
 
@@ -140,3 +142,5 @@ The above line is used to display a message to the user informing them they're c
 15. Now if you look at console you should see the user's id, assess token and their name. You can now use Facebook's JavaScript SDK to access user's information.
 
 For more info on using Facebook's JavaScript SDK: https://developers.facebook.com/docs/javascript
+
+16. Now public to Azure and enjoy!
